@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Double Clean Inc. | Commercial and Residential Cleaning Services in Canada</title>
+<meta name="description" content="Top-rated professional cleaning services in Canada. Residential, apartment and condo, commercial, carpet and upholstery cleaning. Book online in 60 seconds. 24/7 emergency line.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,500..900&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --gold:#D49522; --gold-d:#B57A10; --green:#02833F; --green-d:#01632F;
+  --ink:#2E2E2E; --char:#3F3F3F; --cream:#F6ECD9; --cream-2:#FBF6EC; --line:#E4D6BC;
+  --muted:#6B675F; --white:#fff;
+  --hd:'Archivo',system-ui,sans-serif; --bd:'Manrope',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--bd);color:var(--ink);background:var(--cream-2);line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit}
+.wrap{width:min(1240px,92%);margin:0 auto}
+.hd{font-family:var(--hd);font-stretch:88%;letter-spacing:-.02em;line-height:1.02}
+.eyebrow{font-family:var(--hd);font-stretch:118%;font-weight:700;font-size:.74rem;letter-spacing:.26em;text-transform:uppercase;color:var(--gold-d);display:inline-flex;align-items:center;gap:.7rem}
+.eyebrow::before{content:"";width:28px;height:2px;background:linear-gradient(90deg,var(--green) 50%,var(--gold) 50%)}
+.btn{display:inline-flex;align-items:center;gap:.6rem;font-weight:700;font-size:.95rem;padding:1rem 1.5rem;border-radius:4px;border:2px solid transparent;cursor:pointer;transition:.25s}
+.btn-gold{background:var(--gold);color:#fff}.btn-gold:hover{background:var(--gold-d)}
+.btn-green{background:var(--green);color:#fff}.btn-green:hover{background:var(--green-d)}
+.btn-line{border-color:var(--char);color:var(--char)}.btn-line:hover{background:var(--char);color:#fff}
+.btn svg{width:18px;height:18px}
+
+/* utility bar */
+.util{background:var(--char);color:#E9E2D4;font-size:.82rem}
+.util .wrap{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:.55rem 0;flex-wrap:wrap}
+.util b{color:var(--gold)}
+.util .emer{display:flex;align-items:center;gap:.5rem}
+.util .dot{width:8px;height:8px;border-radius:50%;background:#3BD47A;box-shadow:0 0 0 4px rgba(59,212,122,.2);animation:pulse 2s infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 7px rgba(59,212,122,0)}}
+.util select{background:transparent;color:#fff;border:1px solid #6a6a6a;border-radius:3px;padding:.2rem .4rem;font-size:.8rem}
+.util select option{color:#000}
+.util .citynum{display:flex;align-items:center;gap:.6rem}
+
+/* header */
+header.nav{position:sticky;top:0;z-index:50;background:rgba(251,246,236,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:84px}
+.nav .logo img{height:66px;width:auto}
+.nav ul{display:flex;list-style:none;gap:2rem;font-weight:600;font-size:.94rem}
+.nav ul a{position:relative;padding:.3rem 0}
+.nav ul a::after{content:"";position:absolute;left:0;bottom:-2px;height:2px;width:0;background:var(--gold);transition:.25s}
+.nav ul a:hover::after{width:100%}
+.nav .acts{display:flex;align-items:center;gap:1rem}
+.nav .acts .ph{font-weight:700;font-size:.92rem;display:flex;flex-direction:column;line-height:1.2;text-align:right}
+.nav .acts .ph small{font-weight:600;color:var(--muted);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase}
+.burger{display:none;background:none;border:0;cursor:pointer}
+.burger span{display:block;width:26px;height:2px;background:var(--char);margin:6px 0}
+
+/* hero */
+.hero{position:relative;overflow:hidden;background:var(--cream)}
+.hero .wrap{display:grid;grid-template-columns:1.02fr 1fr;gap:3.5rem;align-items:center;padding:4.5rem 0 5.5rem}
+.hero h1{font-size:clamp(2.6rem,5.2vw,4.6rem);font-weight:850;color:var(--char);margin:1.2rem 0 1.4rem}
+.hero h1 em{font-style:normal;color:var(--green);position:relative;white-space:nowrap}
+.hero h1 em::after{content:"";position:absolute;left:0;right:0;bottom:.04em;height:.14em;background:var(--gold);opacity:.55;z-index:-1}
+.hero p.lead{font-size:1.12rem;color:#4b4840;max-width:520px}
+.hero p.lead strong{color:var(--char)}
+.hero .ctas{display:flex;gap:.9rem;flex-wrap:wrap;margin:2rem 0 2.4rem}
+.proof{display:flex;gap:2rem;flex-wrap:wrap;align-items:center;padding-top:1.6rem;border-top:1px dashed #cdbb98}
+.proof .g{display:flex;align-items:center;gap:.7rem}
+.proof .g .n{font-family:var(--hd);font-weight:850;font-size:2rem;color:var(--char)}
+.stars{color:var(--gold);letter-spacing:2px;font-size:.95rem}
+.proof small{display:block;color:var(--muted);font-size:.8rem;line-height:1.3}
+.proof .badge img{height:58px}
+.hero-vis{position:relative;height:560px}
+.hero-vis .main{position:absolute;inset:0 0 70px 40px;overflow:hidden;clip-path:polygon(0 0,86% 0,100% 14%,100% 100%,0 100%)}
+.hero-vis .main img{width:100%;height:100%;object-fit:cover;object-position:62% 30%}
+.hero-vis .leaf{position:absolute;right:-60px;top:-30px;width:330px;opacity:.95;pointer-events:none;mix-blend-mode:multiply}
+.hero-vis .card{position:absolute;left:0;bottom:0;background:#fff;width:300px;padding:1.3rem 1.4rem;box-shadow:0 30px 60px -25px rgba(60,40,0,.35);border-top:4px solid var(--green)}
+.hero-vis .card h4{font-family:var(--hd);font-size:1.15rem;font-weight:800;color:var(--char);margin-bottom:.2rem}
+.hero-vis .card p{font-size:.85rem;color:var(--muted);margin-bottom:.8rem}
+.hero-vis .card .pk{display:flex;flex-wrap:wrap;gap:.4rem}
+.hero-vis .card .pk a{font-size:.76rem;font-weight:700;padding:.35rem .6rem;border:1px solid var(--line);border-radius:30px;transition:.2s}
+.hero-vis .card .pk a:hover{background:var(--green);color:#fff;border-color:var(--green)}
+.hero-vis .tag{position:absolute;right:0;bottom:30px;background:var(--char);color:#fff;padding:1rem 1.2rem;display:flex;gap:.8rem;align-items:center}
+.hero-vis .tag b{font-family:var(--hd);font-size:2.2rem;font-weight:850;color:var(--gold);line-height:1}
+.hero-vis .tag span{font-size:.78rem;line-height:1.3;max-width:120px}
+
+/* ticker */
+.ticker{background:var(--green);color:#fff;overflow:hidden;padding:1rem 0;border-top:3px solid var(--gold)}
+.ticker .track{display:flex;gap:2.6rem;width:max-content;animation:slide 40s linear infinite}
+.ticker span{font-family:var(--hd);font-stretch:115%;font-weight:700;text-transform:uppercase;letter-spacing:.1em;font-size:.95rem;display:flex;align-items:center;gap:2.6rem;white-space:nowrap}
+.ticker span::after{content:"";width:16px;height:16px;background:var(--gold);clip-path:polygon(50% 0,62% 30%,95% 25%,75% 55%,100% 70%,60% 75%,55% 100%,45% 100%,40% 75%,0 70%,25% 55%,5% 25%,38% 30%)}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* intro */
+.intro{background:var(--char);color:#EDE6D8;padding:6rem 0;position:relative;overflow:hidden}
+.intro::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(135deg,rgba(255,255,255,.025) 0 2px,transparent 2px 22px)}
+.intro .wrap{position:relative;display:grid;grid-template-columns:1.25fr 1fr;gap:4rem;align-items:center}
+.vid{position:relative;display:block;overflow:hidden;border-radius:2px}
+.vid img{width:100%;aspect-ratio:16/9;object-fit:cover;transition:.6s}
+.vid:hover img{transform:scale(1.04)}
+.vid .play{position:absolute;inset:0;display:grid;place-items:center;background:linear-gradient(0deg,rgba(0,0,0,.45),rgba(0,0,0,0) 60%)}
+.vid .play i{width:86px;height:86px;border-radius:50%;background:var(--gold);display:grid;place-items:center;box-shadow:0 0 0 12px rgba(212,149,34,.25)}
+.vid .play i::before{content:"";border-left:22px solid #fff;border-top:14px solid transparent;border-bottom:14px solid transparent;margin-left:6px}
+.vid .cap{position:absolute;left:1.2rem;bottom:1rem;font-size:.82rem;font-weight:600;color:#fff;letter-spacing:.04em}
+.intro h2{font-size:clamp(2rem,3.4vw,3rem);font-weight:800;color:#fff;margin:1rem 0 1.3rem}
+.intro h2 span{color:var(--gold)}
+.intro p{color:#CFC7B8;margin-bottom:1rem}
+.intro .yrs{display:flex;align-items:flex-end;gap:1rem;margin:2rem 0}
+.intro .yrs b{font-family:var(--hd);font-size:5.6rem;font-weight:900;line-height:.8;color:transparent;-webkit-text-stroke:2px var(--gold)}
+.intro .yrs span{font-weight:600;color:#fff;line-height:1.3;padding-bottom:.3rem}
+.intro .eyebrow{color:var(--gold)}
+
+/* services panels */
+.services{padding:6.5rem 0 5rem}
+.sec-top{display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;margin-bottom:3rem;flex-wrap:wrap}
+.sec-top h2{font-size:clamp(2.1rem,3.8vw,3.3rem);font-weight:850;color:var(--char);margin-top:.9rem;max-width:640px}
+.sec-top p{max-width:380px;color:var(--muted)}
+.panels{display:flex;gap:12px;height:520px}
+.panel{position:relative;flex:1;overflow:hidden;cursor:pointer;transition:flex .6s cubic-bezier(.2,.8,.2,1);background:#222;color:#fff}
+.panel.on{flex:3.2}
+.panel img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.78;transition:.6s}
+.panel.on img{opacity:.9}
+.panel::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(25,25,25,.92) 8%,rgba(25,25,25,.15) 60%)}
+.panel .num{position:absolute;top:1.3rem;left:1.4rem;z-index:2;font-family:var(--hd);font-weight:800;font-size:.9rem;letter-spacing:.15em;color:var(--gold)}
+.panel .vt{position:absolute;left:1.4rem;bottom:1.6rem;z-index:2;writing-mode:vertical-rl;transform:rotate(180deg);font-family:var(--hd);font-weight:800;font-size:1.4rem;letter-spacing:.02em;transition:.3s;white-space:nowrap}
+.panel.on .vt{opacity:0}
+.panel .body{position:absolute;left:2rem;right:2rem;bottom:2rem;z-index:2;opacity:0;transform:translateY(20px);transition:.4s .15s;max-width:520px}
+.panel.on .body{opacity:1;transform:none}
+.panel .body h3{font-family:var(--hd);font-size:2rem;font-weight:850;margin-bottom:.6rem}
+.panel .body p{color:#E7E1D5;font-size:.97rem;margin-bottom:1rem}
+.panel .body ul{list-style:none;display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1.2rem}
+.panel .body li{font-size:.78rem;font-weight:700;padding:.3rem .65rem;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);border-radius:30px}
+.panel .body a{color:var(--gold);font-weight:700;display:inline-flex;gap:.4rem;align-items:center}
+.allsvc{margin-top:2.2rem;display:flex;flex-wrap:wrap;gap:.6rem;align-items:center}
+.allsvc b{font-family:var(--hd);font-weight:800;margin-right:.6rem;color:var(--char)}
+.allsvc a{padding:.5rem .95rem;border:1px solid var(--line);background:#fff;border-radius:3px;font-size:.86rem;font-weight:600;transition:.2s}
+.allsvc a:hover{border-color:var(--green);color:var(--green)}
+
+/* booking */
+.book{background:var(--cream);padding:6rem 0;position:relative}
+.book .wrap{display:grid;grid-template-columns:.85fr 1.4fr;gap:3.5rem;align-items:start}
+.book h2{font-size:clamp(2.1rem,3.6vw,3.1rem);font-weight:850;color:var(--char);margin:1rem 0 1.2rem}
+.book .side p{color:var(--muted);margin-bottom:1.6rem}
+.steps-mini{list-style:none;counter-reset:s}
+.steps-mini li{counter-increment:s;display:flex;gap:1rem;padding:1rem 0;border-top:1px solid var(--line);font-weight:600}
+.steps-mini li::before{content:"0" counter(s);font-family:var(--hd);font-weight:850;color:var(--gold);font-size:1.3rem;line-height:1}
+.steps-mini li small{display:block;font-weight:500;color:var(--muted)}
+.note{margin-top:1.4rem;font-size:.85rem;color:var(--muted);display:flex;gap:.5rem}
+.note::before{content:"i";flex:none;width:20px;height:20px;border-radius:50%;background:var(--char);color:#fff;font-size:.72rem;font-weight:800;display:grid;place-items:center}
+.bk{background:#fff;box-shadow:0 40px 80px -40px rgba(70,50,10,.35);position:relative}
+.bk-head{display:flex;border-bottom:1px solid var(--line)}
+.bk-head button{flex:1;padding:1.1rem;background:none;border:0;font-weight:700;color:var(--muted);cursor:pointer;border-bottom:3px solid transparent;text-align:left;padding-left:1.6rem}
+.bk-head button span{font-family:var(--hd);color:var(--gold);margin-right:.5rem}
+.bk-head button.on{color:var(--char);border-color:var(--green)}
+.bk-body{padding:1.8rem 1.6rem}
+.pkgs{display:grid;grid-template-columns:repeat(5,1fr);gap:.6rem}
+.pkg{border:1.5px solid var(--line);padding:1rem .8rem;cursor:pointer;transition:.2s;position:relative;background:var(--cream-2)}
+.pkg:hover{border-color:var(--gold)}
+.pkg.on{border-color:var(--green);background:#fff;box-shadow:inset 0 -4px 0 var(--green)}
+.pkg h5{font-family:var(--hd);font-size:.95rem;font-weight:800;line-height:1.15;color:var(--char);margin-bottom:.5rem}
+.pkg .pr{font-family:var(--hd);font-weight:850;font-size:1.35rem;color:var(--green)}
+.pkg .pr small{display:block;font-family:var(--bd);font-size:.68rem;font-weight:600;color:var(--muted);letter-spacing:.02em}
+.pkg-detail{margin-top:1.4rem;display:grid;grid-template-columns:1.2fr 1fr;gap:1.5rem}
+.incl h6,.addons h6{font-family:var(--hd);font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:.7rem}
+.incl .rooms{display:grid;gap:.7rem}
+.incl .room b{font-size:.86rem;color:var(--char)}
+.incl .room p{font-size:.84rem;color:var(--muted)}
+.incl p.one{font-size:.9rem;color:#4b4840}
+.sz{margin-top:1rem}
+.sz label{font-size:.84rem;font-weight:700;display:flex;justify-content:space-between}
+.sz input[type=range]{width:100%;accent-color:var(--green);margin-top:.4rem}
+.addons .chips{display:flex;flex-wrap:wrap;gap:.4rem}
+.addons .chips label{font-size:.78rem;font-weight:600;padding:.35rem .65rem;border:1px solid var(--line);border-radius:30px;cursor:pointer;user-select:none}
+.addons .chips input{display:none}
+.addons .chips input:checked+span{color:var(--green)}
+.addons .chips label:has(input:checked){border-color:var(--green);background:#EAF5EE}
+.addons small{display:block;margin-top:.6rem;color:var(--muted);font-size:.76rem}
+.sum{display:flex;justify-content:space-between;align-items:center;background:var(--char);color:#fff;padding:1.1rem 1.6rem;gap:1rem;flex-wrap:wrap}
+.sum .t{font-size:.82rem;color:#CFC7B8}
+.sum .t b{display:block;font-family:var(--hd);font-size:1.8rem;color:#fff;font-weight:850}
+.sum .t b small{font-size:.8rem;color:var(--gold);font-family:var(--bd);font-weight:600;margin-left:.4rem}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:.9rem}
+.form-grid .full{grid-column:1/-1}
+.fld label{display:block;font-size:.78rem;font-weight:700;margin-bottom:.3rem;color:var(--char)}
+.fld input,.fld select,.fld textarea{width:100%;padding:.8rem .9rem;border:1.5px solid var(--line);background:var(--cream-2);border-radius:3px;outline:none;transition:.2s}
+.fld input:focus,.fld select:focus,.fld textarea:focus{border-color:var(--green);background:#fff}
+.seg{display:flex;gap:.5rem}
+.seg label{flex:1;text-align:center;border:1.5px solid var(--line);padding:.75rem;cursor:pointer;font-weight:600;font-size:.88rem;background:var(--cream-2)}
+.seg input{display:none}
+.seg label:has(input:checked){border-color:var(--green);background:#EAF5EE;color:var(--green)}
+.hide{display:none!important}
+
+/* advantages zigzag */
+.adv{padding:6.5rem 0 7rem;background:var(--cream-2);position:relative;overflow:hidden}
+.adv .head{text-align:center;max-width:680px;margin:0 auto 3.5rem}
+.adv .head h2{font-size:clamp(2rem,3.6vw,3rem);font-weight:850;color:var(--char);margin-top:.9rem}
+.zz{position:relative;display:grid;grid-template-columns:repeat(5,1fr);gap:1.2rem}
+.zz svg.line{position:absolute;left:0;top:0;width:100%;height:100%;z-index:0}
+.zi{position:relative;z-index:1;text-align:center;padding:0 .4rem}
+.zi:nth-child(odd of .zi){margin-top:0}
+.zi:nth-child(even of .zi){margin-top:120px}
+.zi .ic{width:92px;height:92px;margin:0 auto 1.1rem;background:#fff;border:2px solid var(--gold);border-radius:50%;display:grid;place-items:center;box-shadow:0 14px 30px -14px rgba(120,80,0,.4)}
+.zi .ic img{width:46px;height:46px}
+.zi h3{font-family:var(--hd);font-stretch:112%;font-weight:800;font-size:.98rem;letter-spacing:.06em;text-transform:uppercase;color:var(--char);margin-bottom:.4rem}
+.zi p{font-size:.88rem;color:var(--muted)}
+
+/* areas */
+.areas{background:#fff;padding:6rem 0}
+.areas .grid{display:grid;grid-template-columns:1fr 1.5fr;gap:4rem;align-items:start}
+.areas h2{font-size:clamp(2rem,3.6vw,3rem);font-weight:850;color:var(--char);margin:1rem 0 1.2rem}
+.areas .side p{color:var(--muted);margin-bottom:1.5rem}
+.arealist{display:flex;flex-wrap:wrap;gap:.45rem}
+.arealist span{font-size:.82rem;font-weight:600;padding:.4rem .75rem;background:var(--cream);border-radius:3px}
+.cities{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.city{background:#fff;padding:1.4rem 1.3rem 1.3rem;position:relative;overflow:hidden;transition:.3s;min-height:250px;display:flex;flex-direction:column}
+.city:hover{background:var(--cream-2)}
+.city .shape{height:110px;display:flex;align-items:center;justify-content:flex-start;margin-bottom:1rem}
+.city .shape img{max-height:110px;width:auto;filter:saturate(.85);transition:.4s}
+.city:hover .shape img{transform:scale(1.06) rotate(-2deg)}
+.city h4{font-family:var(--hd);font-weight:850;font-size:1.3rem;color:var(--char)}
+.city address{font-style:normal;font-size:.8rem;color:var(--muted);line-height:1.45;margin:.25rem 0 .7rem;flex:1}
+.city a.tel{font-weight:700;color:var(--green);font-size:.92rem}
+
+/* clients */
+.clients{padding:5rem 0;background:var(--cream)}
+.clients .row{display:flex;align-items:center;justify-content:space-between;gap:2rem;margin-bottom:2.4rem;flex-wrap:wrap}
+.clients h2{font-size:clamp(1.8rem,3vw,2.5rem);font-weight:850;color:var(--char);margin-top:.8rem}
+.logo-wall{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
+.logo-wall div{background:#fff;height:96px;display:grid;place-items:center;padding:1rem 1.2rem;transition:.3s}
+.logo-wall img{max-height:56px;max-width:100%;object-fit:contain;filter:grayscale(1);opacity:.7;transition:.3s}
+.logo-wall div:hover img{filter:none;opacity:1}
+
+/* reviews */
+.reviews{padding:6.5rem 0;background:var(--cream-2)}
+.rev-grid{display:grid;grid-template-columns:320px 1fr;gap:3rem;align-items:start}
+.score{position:sticky;top:110px;background:var(--green);color:#fff;padding:2.2rem}
+.score .eyebrow{color:#fff}.score .eyebrow::before{background:var(--gold)}
+.score b{display:block;font-family:var(--hd);font-size:5.5rem;font-weight:900;line-height:1;margin:1rem 0 .3rem}
+.score .stars{font-size:1.3rem}
+.score p{color:#D6EEDF;margin:.8rem 0 1.5rem;font-size:.92rem}
+.score h2{font-family:var(--hd);font-size:1.7rem;font-weight:850;margin-top:.9rem}
+.score .btn{background:#fff;color:var(--green)}
+.quotes{columns:3 240px;column-gap:1rem}
+.q{break-inside:avoid;background:#fff;border:1px solid var(--line);padding:1.4rem 1.4rem 1.2rem;margin-bottom:1rem;position:relative}
+.q:nth-child(3n+1){border-left:4px solid var(--gold)}
+.q p{font-size:1.02rem;color:var(--char);font-weight:500;margin:.6rem 0 1rem}
+.q .who{display:flex;align-items:center;gap:.6rem;font-size:.85rem;font-weight:700}
+.q .who i{width:34px;height:34px;border-radius:50%;background:var(--cream);color:var(--gold-d);display:grid;place-items:center;font-style:normal;font-family:var(--hd);font-weight:800}
+.q .who small{display:block;font-weight:500;color:var(--muted);font-size:.74rem}
+.q .stars{font-size:.85rem}
+
+/* team */
+.team{padding:6rem 0;background:var(--char);color:#fff;position:relative;overflow:hidden}
+.team .sec-top h2{color:#fff}.team .sec-top p{color:#CFC7B8}.team .eyebrow{color:var(--gold)}
+.crew{display:grid;grid-template-columns:repeat(4,1fr);gap:1.4rem}
+.mem{position:relative}
+.mem .ph{position:relative;aspect-ratio:3/4;overflow:hidden;background:linear-gradient(160deg,#4a4a4a,#2a2a2a)}
+.mem .ph::before{content:"";position:absolute;left:0;right:0;bottom:0;height:42%;background:var(--green);clip-path:polygon(0 35%,100% 0,100% 100%,0 100%);z-index:0}
+.mem .ph img{position:relative;z-index:1;width:100%;height:100%;object-fit:cover;object-position:top;transition:.5s}
+.mem:hover .ph img{transform:scale(1.04)}
+.mem h4{font-family:var(--hd);font-weight:800;font-size:1.25rem;margin-top:1rem}
+.mem span{display:block;color:var(--gold);font-size:.86rem;font-weight:600}
+.mem a{display:inline-block;margin-top:.4rem;font-size:.82rem;color:#CFC7B8;border-bottom:1px solid #666}
+.mem a:hover{color:#fff}
+
+/* quote + contacts */
+.quote{padding:6rem 0;background:#fff}
+.quote .wrap{display:grid;grid-template-columns:1.1fr 1fr;gap:0;box-shadow:0 40px 80px -50px rgba(0,0,0,.35)}
+.q-form{padding:3rem;background:var(--cream)}
+.q-form h2{font-size:clamp(1.9rem,3vw,2.6rem);font-weight:850;color:var(--char);margin:.9rem 0 1.6rem}
+.q-info{background:url(images/team-car.jpg) center/cover;position:relative;color:#fff;padding:3rem;display:flex;flex-direction:column;justify-content:flex-end;min-height:560px}
+.q-info::before{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(28,28,28,.95) 35%,rgba(28,28,28,.25))}
+.q-info>*{position:relative}
+.q-info h3{font-family:var(--hd);font-size:1.6rem;font-weight:850;margin-bottom:1.2rem}
+.q-info .ln{display:flex;gap:.9rem;padding:.8rem 0;border-top:1px solid rgba(255,255,255,.15);font-size:.92rem}
+.q-info .ln b{min-width:92px;color:var(--gold);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;padding-top:.15rem}
+.q-info .big{font-family:var(--hd);font-size:1.7rem;font-weight:850}
+
+/* footer */
+footer{background:#262626;color:#BDB6A8;padding:4.5rem 0 0;font-size:.9rem;position:relative}
+footer::before{content:"";position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--green) 0 50%,var(--gold) 50%)}
+.f-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1.2fr;gap:2.5rem;padding-bottom:3rem}
+.f-grid img.fl{height:78px;width:auto;margin-bottom:1rem}
+.f-grid h5{font-family:var(--hd);color:#fff;font-size:1rem;font-weight:800;margin-bottom:1rem;letter-spacing:.02em}
+.f-grid ul{list-style:none;display:grid;gap:.5rem}
+.f-grid a:hover{color:var(--gold)}
+.f-grid .soc{display:flex;gap:.6rem;margin-top:1.2rem}
+.f-grid .soc a{width:38px;height:38px;border:1px solid #4a4a4a;display:grid;place-items:center;border-radius:50%;transition:.2s}
+.f-grid .soc a:hover{background:var(--gold);border-color:var(--gold);color:#fff}
+.f-grid .soc svg{width:16px;height:16px;fill:currentColor}
+.f-grid .cert{display:flex;gap:1rem;align-items:center;margin-top:1.2rem}
+.f-grid .cert img{height:62px;width:auto;background:#fff;padding:4px;border-radius:3px}
+.f-bot{border-top:1px solid #3a3a3a;padding:1.3rem 0;display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;font-size:.82rem}
+.f-bot a{color:var(--gold);font-weight:700}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .8s,transform .8s}
+.rv.in{opacity:1;transform:none}
+
+/* responsive */
+@media(max-width:1080px){
+  .nav ul{display:none}.burger{display:block}
+  .nav ul.open{display:flex;flex-direction:column;position:absolute;top:84px;left:0;right:0;background:var(--cream-2);padding:1.5rem 4%;gap:1rem;border-bottom:1px solid var(--line)}
+  .hero .wrap,.intro .wrap,.book .wrap,.areas .grid,.rev-grid,.quote .wrap{grid-template-columns:1fr}
+  .hero-vis{height:480px}
+  .pkgs{grid-template-columns:repeat(3,1fr)}
+  .zz{grid-template-columns:repeat(3,1fr);row-gap:3rem}.zz svg.line{display:none}.zi:nth-child(even of .zi){margin-top:0}
+  .logo-wall{grid-template-columns:repeat(4,1fr)}
+  .crew{grid-template-columns:repeat(2,1fr)}
+  .f-grid{grid-template-columns:1fr 1fr}
+  .score{position:relative;top:0}
+  .panels{flex-direction:column;height:auto}
+  .panel{flex:none;height:120px}.panel.on{height:460px;flex:none}
+  .panel .vt{writing-mode:horizontal-tb;transform:none;bottom:auto;top:3rem}
+}
+@media(max-width:640px){
+  .nav .acts .ph{display:none}
+  .util .hrs,.util .citynum{display:none}
+  .nav .logo img{height:50px}
+  .nav .acts .btn{padding:.7rem 1rem;font-size:.85rem}
+  .hero-vis .tag{display:none}
+  .hero-vis .main{left:0}
+  .hero-vis{height:400px}.hero-vis .card{width:240px}.hero-vis .leaf{width:220px}
+  .pkgs{grid-template-columns:1fr 1fr}.pkg-detail,.form-grid{grid-template-columns:1fr}
+  .zz{grid-template-columns:1fr 1fr}
+  .cities{grid-template-columns:1fr 1fr}
+  .logo-wall{grid-template-columns:repeat(3,1fr)}
+  .crew{grid-template-columns:1fr 1fr}
+  .f-grid{grid-template-columns:1fr}
+  .q-form,.q-info{padding:2rem 1.4rem}
+}
+</style>
+</head>
+<body>
+
+<!-- utility bar -->
+<div class="util">
+  <div class="wrap">
+    <div class="emer"><i class="dot"></i>24/7 Emergency: <b><a href="tel:+18886343939">+1 (888) 634-3939</a></b></div>
+    <div class="hrs">Mon to Fri 7am to 5pm &nbsp;·&nbsp; Sat 9am to 3pm</div>
+    <div class="citynum">
+      <select id="citySel" aria-label="Choose your city">
+        <option value="+17808682428|(780) 868-2428">Edmonton</option>
+        <option value="+14038888528|(403) 888-8528" selected>Calgary</option>
+        <option value="+17788689144|(778) 868-9144">Vancouver / Victoria / Kamloops / Kelowna</option>
+        <option value="+16478842988|(647) 884-2988">Toronto (GTA)</option>
+        <option value="+12046885810|(204) 688-5810">Winnipeg</option>
+        <option value="+16138683435|(613) 868-3435">Ottawa</option>
+        <option value="+15198083168|(519) 808-3168">London</option>
+        <option value="+18886343939|(888) 634-3939">Regina</option>
+      </select>
+      <a id="cityTel" href="tel:+14038888528"><b>+1 (403) 888-8528</b></a>
+    </div>
+  </div>
+</div>
+
+<!-- header -->
+<header class="nav">
+  <div class="wrap">
+    <a href="#" class="logo"><img src="images/logo.png" alt="Double Clean Inc."></a>
+    <ul id="menu">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#areas">Areas</a></li>
+      <li><a href="#why">Why Us</a></li>
+      <li><a href="https://www.doubleclean.ca/careers/">Careers</a></li>
+      <li><a href="https://www.doubleclean.ca/blog/">Blog</a></li>
+      <li><a href="https://www.doubleclean.ca/faq/">FAQ</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="acts">
+      <a class="ph" href="tel:+18886343939"><small>24/7 line</small>+1 (888) 634-3939</a>
+      <a href="#book" class="btn btn-gold">Get a Quote</a>
+      <button class="burger" aria-label="Menu" onclick="document.getElementById('menu').classList.toggle('open')"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- hero -->
+<section class="hero">
+  <div class="wrap">
+    <div class="rv">
+      <span class="eyebrow">You deserve it</span>
+      <h1 class="hd">Commercial and Residential Cleaning Services You Can <em>Rely On</em></h1>
+      <p class="lead">Top-rated professional cleaning services in Canada. <strong>Don't just be clean. Be Double Clean!</strong> A locally owned cleaning company, not a national chain, with an efficient, punctual and friendly team.</p>
+      <div class="ctas">
+        <a href="#book" class="btn btn-green">Book online in 60 seconds <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="#quote" class="btn btn-line">Request a free quote</a>
+      </div>
+      <div class="proof">
+        <div class="g"><span class="n">4.9</span><div><span class="stars">★★★★★</span><small>85 Google reviews</small></div></div>
+        <div><b style="font-family:var(--hd);font-size:1.4rem;color:var(--char)">24/7</b><small>Emergency line</small></div>
+        <div><b style="font-family:var(--hd);font-size:1.4rem;color:var(--char)">IICRC</b><small>Certified</small></div>
+        <div class="badge"><img src="images/best-business.png" alt="ThreeBest Rated Best Business of 2020"></div>
+      </div>
+    </div>
+    <div class="hero-vis rv">
+      <div class="main"><img src="images/hero.jpg" alt="Double Clean team cleaning a modern kitchen"></div>
+      <svg class="leaf" viewBox="48 0 46 72" aria-hidden="true"><path d="M93 41.5135L88.3903 39.644L90.339 26.0605L78.2708 27.0144L76.5844 22.054L67.4395 26.1749L70.0256 11.2178L61.2556 13.1637L54.7717 0L49 14.0413L51.661 15.1479L54.9591 6.82988L59.4565 16.2925L66.9898 14.69L64.029 30.41L74.9727 25.6025L76.2846 29.7234L87.0784 28.9983L85.4295 40.9413L88.0905 42.1622L65.753 57.6917L69.6132 64.0255H54.097V72H56.7207V66.4293L74.2607 66.0858L69.4633 58.7217L93 41.5135Z" fill="#D49522"/></svg>
+      <div class="tag"><b>30+</b><span>years of trusted cleaning service</span></div>
+      <div class="card">
+        <h4>Secure your booking in only 1 minute!</h4>
+        <p>Choose a package to start:</p>
+        <div class="pk">
+          <a href="#book" data-go="regular">Regular</a>
+          <a href="#book" data-go="move">Move-in / out</a>
+          <a href="#book" data-go="deep">Deep</a>
+          <a href="#book" data-go="carpet">Carpet</a>
+          <a href="#book" data-go="duct">Duct</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ticker -->
+<div class="ticker" aria-hidden="true">
+  <div class="track">
+    <span>Janitorial</span><span>Commercial</span><span>Property</span><span>Office</span><span>House</span><span>Window</span><span>Carpet</span><span>Floor</span><span>Post-construction</span><span>Duct</span><span>Furniture</span><span>Specialty</span>
+    <span>Janitorial</span><span>Commercial</span><span>Property</span><span>Office</span><span>House</span><span>Window</span><span>Carpet</span><span>Floor</span><span>Post-construction</span><span>Duct</span><span>Furniture</span><span>Specialty</span>
+  </div>
+</div>
+
+<!-- intro + video -->
+<section class="intro">
+  <div class="wrap">
+    <a class="vid rv" href="https://www.youtube.com/watch?v=yZB2AdrQcPk" target="_blank" rel="noopener">
+      <img src="images/video-thumb.jpg" alt="Double Clean video">
+      <span class="play"><i></i></span>
+      <span class="cap">▶ Watch the Double Clean video</span>
+    </a>
+    <div class="rv">
+      <span class="eyebrow">Who we are</span>
+      <h2 class="hd">Professional Cleaning Services <span>Near You</span> In Canada</h2>
+      <p>Double Clean Inc. is a professional cleaning company serving homes and businesses across Canada. Choose a one-time clean or a regular schedule, and we take care of the rest.</p>
+      <p>We save you time and money, run quality control inspections on our work, and respond fast, with a 24/7 emergency line when you need us most.</p>
+      <div class="yrs"><b>30</b><span>years of<br>service</span></div>
+      <a href="#book" class="btn btn-gold">Book your cleaning</a>
+    </div>
+  </div>
+</section>
+
+<!-- services -->
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="sec-top rv">
+      <div><span class="eyebrow">What we clean</span><h2 class="hd">One team for your home, your condo and your business</h2></div>
+      <p>From regular house cleaning to commercial janitorial contracts and deep carpet care. Tap a service to see what's included.</p>
+    </div>
+    <div class="panels rv" id="panels">
+      <div class="panel on">
+        <img src="images/residential.jpg" alt="Residential house cleaning">
+        <span class="num">01</span><span class="vt">Residential</span>
+        <div class="body">
+          <h3>Residential Cleaning</h3>
+          <p>Regular, deep and move-in or move-out cleaning for houses, done room by room.</p>
+          <ul><li>Kitchen</li><li>Bathrooms</li><li>Bedrooms</li><li>Baseboards</li><li>Floors</li></ul>
+          <a href="#book">Book house cleaning →</a>
+        </div>
+      </div>
+      <div class="panel">
+        <img src="images/condo.jpg" alt="Apartment and condo cleaning">
+        <span class="num">02</span><span class="vt">Apartment &amp; Condo</span>
+        <div class="body">
+          <h3>Apartment &amp; Condo</h3>
+          <p>Scheduled or one-time cleaning for apartments and condos, including move-in and move-out cleans.</p>
+          <ul><li>Regular cleaning</li><li>Move-in / Move-out</li><li>Full / Deep</li><li>Windows</li></ul>
+          <a href="#book">Book condo cleaning →</a>
+        </div>
+      </div>
+      <div class="panel">
+        <img src="images/commercial.jpg" alt="Commercial and office cleaning">
+        <span class="num">03</span><span class="vt">Commercial</span>
+        <div class="body">
+          <h3>Commercial Cleaning</h3>
+          <p>Janitorial, office and property cleaning for businesses, with quality control inspections and fast response times.</p>
+          <ul><li>Janitorial</li><li>Office</li><li>Property</li><li>Post-construction</li><li>Floor</li></ul>
+          <a href="#quote">Request a commercial quote →</a>
+        </div>
+      </div>
+      <div class="panel">
+        <img src="images/carpet.jpg" alt="Carpet and upholstery cleaning">
+        <span class="num">04</span><span class="vt">Carpet &amp; Upholstery</span>
+        <div class="body">
+          <h3>Carpet &amp; Upholstery</h3>
+          <p>IICRC certified deep carpet cleaning for rooms, hallways and stairs, plus furniture and upholstery care.</p>
+          <ul><li>Carpet</li><li>Stairs</li><li>Pet stains</li><li>Furniture</li><li>Duct</li></ul>
+          <a href="#book">Book carpet cleaning →</a>
+        </div>
+      </div>
+    </div>
+    <div class="allsvc rv">
+      <b>All services:</b>
+      <a href="#">Janitorial</a><a href="#">Commercial</a><a href="#">Property</a><a href="#">Office</a><a href="#">House</a><a href="#">Window</a><a href="#">Carpet</a><a href="#">Floor</a><a href="#">Post-construction</a><a href="#">Duct</a><a href="#">Furniture</a><a href="#">Specialty</a>
+    </div>
+  </div>
+</section>
+
+<!-- booking -->
+<section class="book" id="book">
+  <div class="wrap">
+    <div class="side rv">
+      <span class="eyebrow">Online booking</span>
+      <h2 class="hd">Secure your booking in only 1 minute!</h2>
+      <p>Pick a package, tell us about your home and choose a time window. You'll see your estimate before you send.</p>
+      <ol class="steps-mini">
+        <li><div>Choose a package<small>Regular, Move-in/out, Deep, Carpet or Duct</small></div></li>
+        <li><div>Enter your details<small>Address, date, morning or afternoon, home size and type</small></div></li>
+      </ol>
+      <p class="note">Online bookings made on weekends are processed on Monday.</p>
+    </div>
+
+    <div class="bk rv">
+      <div class="bk-head">
+        <button class="on" id="t1"><span>01</span>Package</button>
+        <button id="t2"><span>02</span>Your details</button>
+      </div>
+      <div class="bk-body" id="s1">
+        <div class="pkgs" id="pkgs">
+          <div class="pkg on" data-k="regular"><h5>Regular Cleaning</h5><div class="pr">Quote<small>1 bed / 1 bath</small></div></div>
+          <div class="pkg" data-k="move"><h5>Move-in / Move-out</h5><div class="pr">$300<small>up to 600 sq ft</small></div></div>
+          <div class="pkg" data-k="deep"><h5>Full / Deep Cleaning</h5><div class="pr">$500<small>up to 1,000 sq ft</small></div></div>
+          <div class="pkg" data-k="carpet"><h5>Carpet Cleaning</h5><div class="pr">$150<small>2 rooms + hallway</small></div></div>
+          <div class="pkg" data-k="duct"><h5>Duct Cleaning</h5><div class="pr">$249<small>1 furnace, 10 vents</small></div></div>
+        </div>
+        <div class="pkg-detail">
+          <div class="incl" id="incl"></div>
+          <div class="addons">
+            <h6>Add-ons</h6>
+            <div class="chips">
+              <label><input type="checkbox"><span>Basement</span></label>
+              <label><input type="checkbox"><span>Cabinets</span></label>
+              <label><input type="checkbox"><span>Fridge</span></label>
+              <label><input type="checkbox"><span>Stove</span></label>
+              <label><input type="checkbox"><span>Dishwasher</span></label>
+              <label><input type="checkbox"><span>Microwave</span></label>
+              <label><input type="checkbox"><span>Washer / Dryer</span></label>
+              <label><input type="checkbox"><span>Walls</span></label>
+              <label><input type="checkbox"><span>Windows</span></label>
+              <label><input type="checkbox"><span>Stairs carpet</span></label>
+              <label><input type="checkbox"><span>Pets</span></label>
+            </div>
+            <small>Add-ons are assessed separately and confirmed with you.</small>
+          </div>
+        </div>
+      </div>
+      <div class="bk-body hide" id="s2">
+        <form class="form-grid" onsubmit="event.preventDefault();this.innerHTML='<p class=full style=\'font-weight:700;color:var(--green)\'>Thank you! Your booking request has been sent. Our team will confirm shortly.</p>'">
+          <div class="fld"><label>Full name</label><input required placeholder="Your name"></div>
+          <div class="fld"><label>Phone</label><input required type="tel" placeholder="(403) 000-0000"></div>
+          <div class="fld"><label>Email</label><input required type="email" placeholder="you@email.com"></div>
+          <div class="fld"><label>Preferred date</label><input required type="date"></div>
+          <div class="fld full"><label>Address</label><input required placeholder="Street, city, postal code"></div>
+          <div class="fld full"><label>Time window</label>
+            <div class="seg"><label><input type="radio" name="tw" checked>Morning</label><label><input type="radio" name="tw">Afternoon</label></div></div>
+          <div class="fld"><label>Home type</label><select><option>House</option><option>Apartment</option><option>Condo</option><option>Townhouse</option><option>Office / Commercial</option></select></div>
+          <div class="fld"><label>Home size (sq ft)</label><input type="number" id="sqf2" placeholder="1000"></div>
+          <div class="full"><button class="btn btn-green" type="submit">Confirm booking request</button></div>
+        </form>
+      </div>
+      <div class="sum">
+        <div class="t" id="sumT">Estimated total<b>$0.00<small></small></b></div>
+        <button class="btn btn-gold" id="nextBtn">Continue to details →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- advantages -->
+<section class="adv" id="why">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">Why Double Clean</span>
+      <h2 class="hd">Five reasons Canadians choose us again and again</h2>
+    </div>
+    <div class="zz rv">
+      <svg class="line" viewBox="0 0 1000 260" preserveAspectRatio="none" aria-hidden="true"><polyline points="100,46 300,166 500,46 700,166 900,46" fill="none" stroke="#D49522" stroke-width="2.5" stroke-dasharray="7 7"/></svg>
+      <div class="zi"><div class="ic"><img src="images/advantages-time.svg" alt=""></div><h3>Enjoy more free time</h3><p>We handle the cleaning so you can spend your time on what matters.</p></div>
+      <div class="zi"><div class="ic"><img src="images/advantages-health-in.svg" alt=""></div><h3>Health &amp; Safety</h3><p>The safety and well-being of our team and clients comes first.</p></div>
+      <div class="zi"><div class="ic"><img src="images/advantages-badge.svg" alt=""></div><h3>Best in-class service</h3><p>Decades of consistent, top-rated service for homes and businesses.</p></div>
+      <div class="zi"><div class="ic"><img src="images/advantages-number.svg" alt=""></div><h3>Book in 60 seconds</h3><p>A quick online form to choose your package, date and time.</p></div>
+      <div class="zi"><div class="ic"><img src="images/advantages-wallet.svg" alt=""></div><h3>Pay with ease</h3><p>Secure, simple payment options with clear pricing.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- areas -->
+<section class="areas" id="areas">
+  <div class="wrap grid">
+    <div class="side rv">
+      <span class="eyebrow">Service areas</span>
+      <h2 class="hd">Local offices from coast to coast</h2>
+      <p>Call your local team directly, or use our 24/7 emergency line at <a href="tel:+18886343939" style="color:var(--green);font-weight:700">+1 (888) 634-3939</a>.</p>
+      <div class="arealist">
+        <span>Edmonton</span><span>Calgary</span><span>Red Deer</span><span>Vancouver</span><span>Greater Vancouver</span><span>Victoria</span><span>Kamloops</span><span>Kelowna</span><span>Winnipeg</span><span>Toronto / GTA</span><span>London</span><span>Ottawa</span><span>Regina</span><span>Saskatoon</span>
+      </div>
+    </div>
+    <div class="cities rv">
+      <div class="city"><div class="shape"><img src="images/city-edmonton.png" alt="Edmonton"></div><h4>Edmonton</h4><address>202-10432 123 ST NW, Edmonton, AB T5N 1N7</address><a class="tel" href="tel:+17808682428">+1 (780) 868-2428</a></div>
+      <div class="city"><div class="shape"><img src="images/city-calgary.png" alt="Calgary"></div><h4>Calgary</h4><address>5826 Burbank Rd SE, Calgary, AB T2H 1Z3</address><a class="tel" href="tel:+14038888528">+1 (403) 888-8528</a></div>
+      <div class="city"><div class="shape"><img src="images/city-vancouver.png" alt="Vancouver"></div><h4>Vancouver</h4><address>7228 Winston St #14, Burnaby, BC V5A 2G9</address><a class="tel" href="tel:+17788689144">+1 (778) 868-9144</a></div>
+      <div class="city"><div class="shape"><img src="images/city-toronto.png" alt="Toronto"></div><h4>Toronto</h4><address>1460 The Queensway, Etobicoke, ON M8Z 1S7</address><a class="tel" href="tel:+16478842988">+1 (647) 884-2988</a></div>
+      <div class="city"><div class="shape"><img src="images/city-winnipeg.png" alt="Winnipeg"></div><h4>Winnipeg</h4><address>1332 Clifton St, Winnipeg, MB R3E 2V2</address><a class="tel" href="tel:+12046885810">+1 (204) 688-5810</a></div>
+      <div class="city"><div class="shape"><img src="images/city-ottawa.png" alt="Ottawa"></div><h4>Ottawa</h4><address>323 Coventry Rd, Ottawa, ON K1K 3X6</address><a class="tel" href="tel:+16138683435">+1 (613) 868-3435</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- clients -->
+<section class="clients">
+  <div class="wrap">
+    <div class="row rv">
+      <div><span class="eyebrow">What we do</span><h2 class="hd">Trusted by businesses across Canada</h2></div>
+      <a href="#quote" class="btn btn-line">Get a commercial quote</a>
+    </div>
+    <div class="logo-wall rv" id="logos"></div>
+  </div>
+</section>
+
+<!-- reviews -->
+<section class="reviews">
+  <div class="wrap rev-grid">
+    <div class="score rv">
+      <span class="eyebrow">Google reviews</span>
+      <h2>What Our Clients Say</h2>
+      <b>4.9</b>
+      <div class="stars">★★★★★</div>
+      <p>Based on 85 Google reviews from homeowners and businesses.</p>
+      <a href="#book" class="btn">Book your clean</a>
+    </div>
+    <div class="quotes rv">
+      <div class="q"><div class="stars">★★★★★</div><p>"They were kind, the customer service was incredible, affordable prices."</p><div class="who"><i>A</i><div>Angel Heights<small>Google review</small></div></div></div>
+      <div class="q"><div class="stars">★★★★★</div><p>"Did an excellent job removing pet stains from the carpet."</p><div class="who"><i>R</i><div>Robyn Polachuk<small>Google review</small></div></div></div>
+      <div class="q"><div class="stars">★★★★★</div><p>"Arrived on time, worked quickly and efficiently."</p><div class="who"><i>K</i><div>Kevin Yhap<small>Google review</small></div></div></div>
+      <div class="q"><div class="stars">★★★★★</div><p>"Prompt response and fast action and on time service."</p><div class="who"><i>A</i><div>Amrita Singh<small>Google review</small></div></div></div>
+      <div class="q"><div class="stars">★★★★★</div><p>"Top notch professional services. Highly recommended."</p><div class="who"><i>O</i><div>Oleksandr Oliinyk<small>Google review</small></div></div></div>
+      <div class="q"><div class="stars">★★★★★</div><p>"Good service at great price, must try them."</p><div class="who"><i>T</i><div>Travis Novak<small>Google review</small></div></div></div>
+      <div class="q"><div class="stars">★★★★★</div><p>"Double Clean was very quick to respond to my initial query."</p><div class="who"><i>R</i><div>Raval M<small>Google review</small></div></div></div>
+      <div class="q"><div class="stars">★★★★★</div><p>"The service and quality are top. I recommend it."</p><div class="who"><i>K</i><div>Kirill Posikera<small>Google review</small></div></div></div>
+      <div class="q"><div class="stars">★★★★★</div><p>"Great customer service, nice personnel."</p><div class="who"><i>J</i><div>Justin<small>Google review</small></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- team -->
+<section class="team">
+  <div class="wrap">
+    <div class="sec-top rv">
+      <div><span class="eyebrow">Meet our team</span><h2 class="hd">The people behind every Double Clean</h2></div>
+      <p>Real people you can reach directly, from operations to business development.</p>
+    </div>
+    <div class="crew rv">
+      <div class="mem"><div class="ph"><img src="images/alisa.jpg" alt="Alisa Nazarenko"></div><h4>Alisa Nazarenko</h4><span>Cleaning Operational Supervisor</span><a href="mailto:alisa@doubleclean.ca">alisa@doubleclean.ca</a></div>
+      <div class="mem"><div class="ph"><img src="images/anastasia.jpg" alt="Anastasia Iskorka"></div><h4>Anastasia Iskorka</h4><span>Cleaning Operational Coordinator</span><a href="mailto:cleaning-admin@doubleclean.ca">cleaning-admin@doubleclean.ca</a></div>
+      <div class="mem"><div class="ph"><img src="images/mona.jpg" alt="Mona Hussein"></div><h4>Mona Hussein</h4><span>Business Development Manager</span><a href="mailto:mona@doubleclean.ca">mona@doubleclean.ca</a></div>
+      <div class="mem"><div class="ph"><img src="images/artem.jpg" alt="Artem Yasynetskyy"></div><h4>Artem Yasynetskyy</h4><span>CEO</span><a href="mailto:artem@doubleclean.ca">artem@doubleclean.ca</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- quote + contacts -->
+<section class="quote" id="quote">
+  <div class="wrap" id="contact">
+    <div class="q-form rv">
+      <span class="eyebrow">Free quote</span>
+      <h2 class="hd">Get a Quote for Your Cleaning Services</h2>
+      <form class="form-grid" onsubmit="event.preventDefault();this.innerHTML='<p class=full style=\'font-weight:700;color:var(--green)\'>Thank you! We will get back to you shortly.</p>'">
+        <div class="fld"><label>Name</label><input required placeholder="Your name"></div>
+        <div class="fld"><label>Phone</label><input required type="tel" placeholder="Phone number"></div>
+        <div class="fld"><label>Email</label><input required type="email" placeholder="you@email.com"></div>
+        <div class="fld"><label>City</label><select><option>Edmonton</option><option selected>Calgary</option><option>Red Deer</option><option>Vancouver</option><option>Victoria</option><option>Kamloops</option><option>Kelowna</option><option>Winnipeg</option><option>Toronto / GTA</option><option>London</option><option>Ottawa</option><option>Regina</option><option>Saskatoon</option></select></div>
+        <div class="fld full"><label>Service</label><select><option>Residential cleaning</option><option>Apartment / Condo cleaning</option><option>Commercial / Janitorial</option><option>Office cleaning</option><option>Carpet &amp; Upholstery</option><option>Post-construction</option><option>Duct cleaning</option><option>Window cleaning</option><option>Other</option></select></div>
+        <div class="fld full"><label>Message</label><textarea rows="4" placeholder="Tell us about your space"></textarea></div>
+        <div class="full"><button class="btn btn-gold" type="submit">Send my quote request</button></div>
+      </form>
+    </div>
+    <div class="q-info rv">
+      <h3>Our contacts</h3>
+      <div class="ln"><b>24/7</b><a class="big" href="tel:+18886343939">+1 (888) 634-3939</a></div>
+      <div class="ln"><b>Email</b><a href="mailto:info@doubleclean.ca">info@doubleclean.ca</a></div>
+      <div class="ln"><b>Hours</b><span>Monday to Friday 7am to 5pm<br>Saturday 9am to 3pm</span></div>
+      <div class="ln"><b>Offices</b><span>Edmonton · Calgary · Red Deer · Vancouver · Victoria · Kamloops · Kelowna · Winnipeg · Toronto · London · Ottawa · Regina</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- footer -->
+<footer>
+  <div class="wrap">
+    <div class="f-grid">
+      <div>
+        <img class="fl" src="images/logo-light.png" alt="Double Clean Inc.">
+        <p>Top-rated professional cleaning services in Canada. Don't just be clean. Be Double Clean!</p>
+        <div class="soc">
+          <a href="https://www.facebook.com/doublecleaninc/" aria-label="Facebook" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M14 8V6c0-.8.2-1.3 1.4-1.3H17V1.2C16.7 1.1 15.6 1 14.4 1 11.8 1 10 2.6 10 5.5V8H7v3.6h3V23h4V11.6h3l.5-3.6H14z"/></svg></a>
+          <a href="https://www.linkedin.com/company/double-clean/" aria-label="LinkedIn" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M4.98 3.5C4.98 4.9 3.9 6 2.5 6S0 4.9 0 3.5 1.1 1 2.5 1s2.48 1.1 2.48 2.5zM.3 8h4.4v14H.3V8zm7.2 0h4.2v1.9h.1c.6-1.1 2-2.3 4.2-2.3 4.5 0 5.3 2.9 5.3 6.8V22h-4.4v-6.6c0-1.6 0-3.6-2.2-3.6s-2.5 1.7-2.5 3.5V22H7.5V8z"/></svg></a>
+          <a href="https://www.instagram.com/double_clean_group/" aria-label="Instagram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 3.3.1 4.8 1.7 4.9 4.9.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 3.2-1.7 4.8-4.9 4.9-1.3.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-3.3-.1-4.8-1.7-4.9-4.9C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8C2.4 3.9 3.9 2.4 7.2 2.3 8.4 2.2 8.8 2.2 12 2.2zM12 7a5 5 0 100 10 5 5 0 000-10zm0 8.2a3.2 3.2 0 110-6.4 3.2 3.2 0 010 6.4zM17.3 5.5a1.2 1.2 0 100 2.4 1.2 1.2 0 000-2.4z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h5>Quick links</h5>
+        <ul><li><a href="#">Home</a></li><li><a href="#why">Why Choose Us</a></li><li><a href="https://www.doubleclean.ca/faq/">FAQ</a></li><li><a href="#contact">Contact</a></li><li><a href="https://www.doubleclean.ca/blog/">Blog</a></li><li><a href="https://www.doubleclean.ca/careers/">Careers</a></li></ul>
+      </div>
+      <div>
+        <h5>Services</h5>
+        <ul><li><a href="#services">Residential Cleaning</a></li><li><a href="#services">Apartment &amp; Condo</a></li><li><a href="#services">Commercial Cleaning</a></li><li><a href="#services">Carpet &amp; Upholstery</a></li><li><a href="#services">Duct Cleaning</a></li><li><a href="#services">Post-construction</a></li></ul>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <ul>
+          <li>24/7 Emergency: <a href="tel:+18886343939" style="color:#fff;font-weight:700">+1 (888) 634-3939</a></li>
+          <li><a href="mailto:info@doubleclean.ca">info@doubleclean.ca</a></li>
+          <li>Mon to Fri 7am to 5pm, Sat 9am to 3pm</li>
+        </ul>
+        <div class="cert"><img src="images/iicrc-certificated.svg" alt="IICRC certified"><span>IICRC certified</span></div>
+      </div>
+    </div>
+    <div class="f-bot">
+      <span>© 2026 Double Clean Inc. All rights reserved. &nbsp;·&nbsp; <a href="https://www.doubleclean.ca/privacy-policy/" style="color:inherit;font-weight:500">Privacy Policy</a> &nbsp;·&nbsp; <a href="https://www.doubleclean.ca/terms-of-service/" style="color:inherit;font-weight:500">Terms of Service</a></span>
+      <span><a href="https://cleanningdigital.com/" target="_blank" rel="noopener">Design by Cleaning Digital.</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// city phone selector
+const sel=document.getElementById('citySel'),tel=document.getElementById('cityTel');
+sel.addEventListener('change',()=>{const[v,t]=sel.value.split('|');tel.href='tel:'+v;tel.innerHTML='<b>+1 '+t+'</b>';});
+
+// service panels
+document.querySelectorAll('.panel').forEach(p=>{
+  const act=()=>{document.querySelectorAll('.panel').forEach(x=>x.classList.remove('on'));p.classList.add('on')};
+  p.addEventListener('mouseenter',()=>{if(innerWidth>1080)act()});p.addEventListener('click',act);
+});
+
+// client logos
+const lw=document.getElementById('logos');
+for(let i=1;i<=23;i++){const d=document.createElement('div');d.innerHTML='<img src="images/clients/client-'+String(i).padStart(2,'0')+'.png" alt="Client logo">';lw.appendChild(d)}
+
+// booking
+const P={
+ regular:{base:null,label:'Regular Cleaning',html:'<h6>Included</h6><div class="rooms"><div class="room"><b>Kitchen</b><p>Countertops, sink, fridge (outside only), stove (outside only), floors</p></div><div class="room"><b>Bathroom</b><p>Bathtub, shower, tiles, toilet, sink, mirror, light fixture, fan, vanity cupboards, floors</p></div><div class="room"><b>Bedroom</b><p>Baseboards, vacuum carpets, dusting furniture</p></div></div>'},
+ move:{base:300,label:'Move-in / Move-out',html:'<h6>Included</h6><p class="one">Move-in or move-out cleaning for homes up to 600 sq ft. Larger homes are quoted on booking.</p>'},
+ deep:{base:500,inc:1000,rate:.55,unit:'sq ft',label:'Full / Deep Cleaning',html:'<h6>Included</h6><p class="one">Full deep clean for up to 1,000 sq ft, then $0.55 per sq ft above that.</p>'},
+ carpet:{base:150,inc:1000,rate:.15,unit:'sq ft',label:'Carpet Cleaning',html:'<h6>Included</h6><p class="one">Two rooms and a hallway, up to 1,000 sq ft, then $0.15 per sq ft above that.</p>'},
+ duct:{base:249,inc:10,rate:15,unit:'vents',label:'Duct Cleaning',html:'<h6>Included</h6><p class="one">One furnace and up to 10 vents, then $15 per extra vent.</p>'}
+};
+let cur='regular',qty=0;
+const incl=document.getElementById('incl'),sumT=document.getElementById('sumT');
+function render(){
+  const p=P[cur];let html=p.html;
+  if(p.rate){const max=p.unit==='vents'?40:4000,min=p.unit==='vents'?1:300;if(!qty||qty<min||qty>max)qty=p.inc;
+    html+='<div class="sz"><label><span>'+(p.unit==='vents'?'Number of vents':'Home size')+'</span><span id="qv">'+qty+' '+p.unit+'</span></label><input type="range" id="qr" min="'+min+'" max="'+max+'" step="'+(p.unit==='vents'?1:50)+'" value="'+qty+'"></div>';}
+  incl.innerHTML=html;
+  const r=document.getElementById('qr');if(r)r.oninput=e=>{qty=+e.target.value;document.getElementById('qv').textContent=qty+' '+p.unit;total()};
+  total();
+}
+function total(){
+  const p=P[cur];
+  if(p.base===null){sumT.innerHTML='Estimated total<b>Custom quote<small>confirmed by our team</small></b>';return}
+  let s=p.base;if(p.rate&&qty>p.inc)s+=(qty-p.inc)*p.rate;
+  const g=s*.05;sumT.innerHTML='Estimated total<b>$'+(s+g).toFixed(2)+'<small>$'+s.toFixed(2)+' + $'+g.toFixed(2)+' GST</small></b>';
+}
+function pick(k){cur=k;qty=0;document.querySelectorAll('.pkg').forEach(x=>x.classList.toggle('on',x.dataset.k===k));render()}
+document.querySelectorAll('.pkg').forEach(x=>x.onclick=()=>pick(x.dataset.k));
+document.querySelectorAll('[data-go]').forEach(a=>a.addEventListener('click',()=>{pick(a.dataset.go);step(1)}));
+const s1=document.getElementById('s1'),s2=document.getElementById('s2'),t1=document.getElementById('t1'),t2=document.getElementById('t2'),nb=document.getElementById('nextBtn');
+function step(n){s1.classList.toggle('hide',n!==1);s2.classList.toggle('hide',n!==2);t1.classList.toggle('on',n===1);t2.classList.toggle('on',n===2);nb.textContent=n===1?'Continue to details →':'← Back to package';nb.dataset.s=n}
+t1.onclick=()=>step(1);t2.onclick=()=>step(2);nb.onclick=()=>step(nb.dataset.s==='2'?1:2);
+render();
+
+// reveal
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
